@@ -1,16 +1,15 @@
 'use client'
 
-import { Button } from 'react-bootstrap'
-import Heading from '../components/Heading'
+import { Button } from '@mui/joy'
+import Heading from '../components/heading'
 
 import '../styles/global.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function Home() {
 	return (
 		<>
 			<Heading />
-			<Button>Example button</Button>
+			<Button>Hello</Button>
 		</>
 	)
 }

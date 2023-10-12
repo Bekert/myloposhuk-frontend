@@ -57,12 +57,13 @@
 	},
 	"homepage": "https://github.com/Bekert/project-base",
 	"dependencies": {
-		"bootstrap": "^5.3.2",
+		"@emotion/react": "^11.11.1",
+		"@emotion/styled": "^11.11.0",
+		"@mui/joy": "^5.0.0-beta.10",
 		"eslint-config-next": "^13.5.4",
 		"next": "^13.5.4",
 		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
-		"react-bootstrap": "^2.9.0",
 		"react-dom": "^18.2.0"
 	}
 }
