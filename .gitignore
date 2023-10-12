@@ -1,0 +1,8 @@
+.env
+dist
+build
+node_modules
+.vscode
+*.eslintcache
+.next
+.swc
