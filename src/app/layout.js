@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types'
 import { Inter } from 'next/font/google'
-import { CssBaseline, CssVarsProvider } from '@mui/joy'
+import Navbar from './components/Navbar'
+
+import '../styles/global.css'
+import ThemeRegistry from './components/ThemeRegistry'
+import Container from './components/Container'
 
 export const metadata = {
 	title: 'Next JS Template',
@@ -14,13 +18,16 @@ const inter = Inter({
 })
 
 function RootLayout({ children }) {
+	// the way joy ui handles dark mode with ssr is cursed or I'm just dumb
+	// sorry god for suppressHydrationWarning, костиль is the way
+
 	return (
-		<html lang='en' className={inter.className}>
+		<html lang='en' className={inter.className} suppressHydrationWarning={true}>
 			<body>
-				<CssVarsProvider>
-					<CssBaseline />
-					{children}
-				</CssVarsProvider>
+				<ThemeRegistry options={{ key: 'joy' }}>
+					<Navbar />
+					<Container>{children}</Container>
+				</ThemeRegistry>
 			</body>
 		</html>
 	)
