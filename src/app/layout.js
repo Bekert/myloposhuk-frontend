@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { Inter } from 'next/font/google'
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar/Navbar'
 
 import '../styles/global.css'
 import ThemeRegistry from './components/ThemeRegistry'

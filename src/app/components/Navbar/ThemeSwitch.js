@@ -1,9 +1,10 @@
 'use client'
 
-import Switch from '@mui/joy/Switch'
-import DarkMode from '@mui/icons-material/DarkMode'
-import { useColorScheme } from '@mui/joy/styles'
 import { useEffect, useState } from 'react'
+
+import { useColorScheme } from '@mui/joy/styles'
+import { Switch } from '@mui/joy'
+import { DarkMode } from '@mui/icons-material'
 
 export default function ThemeSwitch() {
 	const { mode, setMode } = useColorScheme()
