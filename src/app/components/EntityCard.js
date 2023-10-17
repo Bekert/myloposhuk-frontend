@@ -3,16 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // will be a server component
-export default function EntityCard({ entityId }) {
-	const dataFromServer = {
-		imageUrl: 'http://localhost:8080/2016603.jpg',
-		title: 'Mission: Impossible - Dead Reckoning Part One'
-	}
-	const { imageUrl, title } = dataFromServer
-
+export default function EntityCard({ imageUrl, title, id }) {
 	return (
 		<Box sx={{ width: 'fit-content' }}>
-			<Link href={`/${entityId}`}>
+			<Link href={`/${id}`}>
 				<Card sx={{ cursor: 'pointer' }}>
 					<CardContent sx={{ width: 240 }}>
 						<Box sx={{ borderRadius: 'md', overflow: 'hidden', height: 360 }}>
