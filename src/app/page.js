@@ -31,7 +31,7 @@ export default function Home() {
 		},
 		{
 			image: 'http://localhost:8080/2016603.jpg',
-			title: 'Mission: Impossible - Dead Reckoning Part One',
+			title: 'Mission: Impossible ',
 			id: 123,
 			rating: 3.287,
 			isWatched: true
@@ -45,7 +45,7 @@ export default function Home() {
 		},
 		{
 			image: 'http://localhost:8080/2016603.jpg',
-			title: 'Mission: Impossible - Dead Reckoning Part One',
+			title: 'Mission: Impossible - Dead Reckoning Part One 324324324 4434',
 			id: 123,
 			rating: 3.287,
 			isWatched: true
@@ -87,6 +87,7 @@ export default function Home() {
 											cursor: 'pointer',
 											'&:hover': { textDecoration: 'underline' }
 										}}
+										component='h3'
 									>
 										<Icon /> {title} <ArrowForwardIos />
 									</ListSubheader>
@@ -109,13 +110,6 @@ export default function Home() {
 					<SuggestionsCard />
 				</Grid>
 			</Grid>
-
-			<h1>Premiers: In theaters</h1>
-			<h1>Premiers: Online</h1>
-			<h1>TV Shows</h1>
-
-			<h1>aside what to watch</h1>
-			<h1>aside realese calendar</h1>
 		</>
 	)
 }

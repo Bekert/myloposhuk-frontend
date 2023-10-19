@@ -1,0 +1,8 @@
+.control-arrow {
+	bottom: unset;
+	height: 360px;
+}
+
+.control-arrow:hover {
+	background: var(--joy-palette-neutral-500) !important;
+}

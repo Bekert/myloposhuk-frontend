@@ -1,17 +1,6 @@
 'use client'
 
-import {
-	Box,
-	Button,
-	ButtonGroup,
-	Dropdown,
-	Menu,
-	MenuButton,
-	MenuItem,
-	Slider,
-	Tooltip,
-	Typography
-} from '@mui/joy'
+import { Box, Button, ButtonGroup, Menu, MenuItem, Slider, Tooltip, Typography } from '@mui/joy'
 import { formatRating } from '../../lib/utils'
 import { useRef, useState } from 'react'
 
@@ -26,7 +15,7 @@ export default function Rating({ user, imdb, rt }) {
 
 	function updateUserScore() {}
 	return (
-		<div>
+		<>
 			<ButtonGroup variant='outlined'>
 				<Tooltip title='Click to set a score'>
 					<Button
@@ -81,6 +70,7 @@ export default function Rating({ user, imdb, rt }) {
 					</Button>
 				</Tooltip>
 			</ButtonGroup>
+
 			<Menu open={open} anchorEl={anchorRef.current}>
 				{user ? (
 					<>
@@ -94,7 +84,7 @@ export default function Rating({ user, imdb, rt }) {
 						>
 							<Slider
 								orientation='vertical'
-								defaultValue={userRating.rating || 5}
+								defaultValue={+userRating.rating || 5}
 								step={1}
 								marks
 								min={1}
@@ -116,6 +106,6 @@ export default function Rating({ user, imdb, rt }) {
 					<MenuItem>You need to Log In to set a score</MenuItem>
 				)}
 			</Menu>
-		</div>
+		</>
 	)
 }
