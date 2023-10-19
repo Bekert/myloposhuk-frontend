@@ -18,6 +18,7 @@ import {
 } from '@mui/icons-material'
 import Link from 'next/link'
 import SuggestionsCard from './components/SuggestionsCard'
+import CalendarCard from './components/CalendarCard'
 
 // only server
 export default function Home() {
@@ -106,8 +107,9 @@ export default function Home() {
 					</List>
 				</Grid>
 				{/* somehow add conditional rendering here in the future */}
-				<Grid xs={0} md={4}>
+				<Grid xs={0} md={4} sx={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
 					<SuggestionsCard />
+					<CalendarCard />
 				</Grid>
 			</Grid>
 		</>

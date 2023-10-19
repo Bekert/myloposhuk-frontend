@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar'
 import '../styles/global.css'
 import ThemeRegistry from './components/ThemeRegistry'
 import Container from './components/Container'
+import Footer from './components/Footer'
 
 export const metadata = {
 	title: 'Next JS Template',
@@ -27,6 +28,7 @@ function RootLayout({ children }) {
 				<ThemeRegistry options={{ key: 'joy' }}>
 					<Navbar />
 					<Container>{children}</Container>
+					<Footer />
 				</ThemeRegistry>
 			</body>
 		</html>
