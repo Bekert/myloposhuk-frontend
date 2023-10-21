@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types'
 import { Inter } from 'next/font/google'
+
 import Navbar from './components/Navbar/Navbar'
 
-import '../styles/global.css'
 import ThemeRegistry from './components/ThemeRegistry'
 import Container from './components/Container'
 import Footer from './components/Footer'
+
+import '../styles/global.css'
 
 export const metadata = {
 	title: 'Next JS Template',

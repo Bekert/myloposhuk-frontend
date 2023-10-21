@@ -1,10 +1,13 @@
 'use client'
 
-import { Box, Button, ButtonGroup, Menu, MenuItem, Slider, Tooltip, Typography } from '@mui/joy'
-import { formatRating } from '../../lib/utils'
 import { useRef, useState } from 'react'
+import PropTypes from 'prop-types'
 
-export default function Rating({ user, imdb, rt }) {
+import { Box, Button, ButtonGroup, Menu, MenuItem, Slider, Tooltip, Typography } from '@mui/joy'
+
+import { formatRating } from '../../lib/utils'
+
+function Rating({ user, imdb, rt }) {
 	const userRating = user && formatRating(user)
 	const imdbRating = imdb && formatRating(imdb)
 	const rtRating = rt && formatRating(rt, 'rt')
@@ -109,3 +112,11 @@ export default function Rating({ user, imdb, rt }) {
 		</>
 	)
 }
+
+Rating.propTypes = {
+	imdb: PropTypes.number.isRequired,
+	rt: PropTypes.number.isRequired,
+	user: PropTypes.number
+}
+
+export default Rating

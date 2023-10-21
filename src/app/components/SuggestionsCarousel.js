@@ -1,11 +1,12 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 import { Box, Typography } from '@mui/joy'
 
-import Image from 'next/image'
 import Rating from './Rating'
 import EntityTags from './EntityTags'
 import EntityInfo from './EntityInfo'
 import Carousel from './Carousel/Carousel'
-import Link from 'next/link'
 
 export default function SuggestionsCarousel({ suggestions }) {
 	return (

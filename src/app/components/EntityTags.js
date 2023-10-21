@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types'
+
 import { Box, Chip } from '@mui/joy'
 
-export default function EntityTags({ tags }) {
+function EntityTags({ tags }) {
 	return (
 		<Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
 			{tags.map(({ title, type }, i) => (
@@ -11,3 +13,9 @@ export default function EntityTags({ tags }) {
 		</Box>
 	)
 }
+
+EntityTags.propTypes = {
+	tags: PropTypes.arrayOf(PropTypes.string)
+}
+
+export default EntityTags

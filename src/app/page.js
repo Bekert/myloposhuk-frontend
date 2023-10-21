@@ -1,26 +1,12 @@
-import {
-	Card,
-	Grid,
-	List,
-	ListItem,
-	ListItemContent,
-	ListItemDecorator,
-	ListSubheader
-} from '@mui/joy'
-import EntityCard from './components/EntityCard'
-import {
-	ArrowForward,
-	ArrowForwardIos,
-	ArrowRight,
-	LiveTv,
-	Movie,
-	Theaters
-} from '@mui/icons-material'
 import Link from 'next/link'
+
+import { Grid, List, ListItem, ListItemContent, ListSubheader } from '@mui/joy'
+import { ArrowForwardIos, LiveTv, Movie, Theaters } from '@mui/icons-material'
+
+import EntityCard from './components/EntityCard'
 import SuggestionsCard from './components/SuggestionsCard'
 import CalendarCard from './components/CalendarCard'
 
-// only server
 export default function Home() {
 	const dataFromServer = [
 		{

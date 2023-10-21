@@ -1,10 +1,12 @@
-import { Box, Card, CardContent, Chip, Typography } from '@mui/joy'
 import Image from 'next/image'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
+
+import { Box, Card, CardContent, Chip, Typography } from '@mui/joy'
+
 import { formatRating } from '../../lib/utils'
 
-// will be a server component
-export default function EntityCard({ image, title, id, isWatched, rating }) {
+function EntityCard({ id, title, image, rating, isWatched }) {
 	const { rating: formattedRating, color: ratingColor } = formatRating(rating)
 
 	return (
@@ -55,3 +57,14 @@ export default function EntityCard({ image, title, id, isWatched, rating }) {
 		</Box>
 	)
 }
+
+// not sure about id type
+EntityCard.propTypes = {
+	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	title: PropTypes.string.isRequired,
+	image: PropTypes.string.isRequired,
+	rating: PropTypes.number.isRequired,
+	isWatched: PropTypes.bool
+}
+
+export default EntityCard
