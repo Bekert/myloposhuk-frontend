@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-import { Grid, List, ListItem, ListItemContent, ListSubheader } from '@mui/joy'
+import { Box, Grid, List, ListItem, ListItemContent, ListSubheader } from '@mui/joy'
 import { ArrowForwardIos, LiveTv, Movie, Theaters } from '@mui/icons-material'
 
-import EntityCard from './components/EntityCard'
+import EntityCard from '../components/EntityCard'
 import SuggestionsCard from './components/SuggestionsCard'
 import CalendarCard from './components/CalendarCard'
 
@@ -13,28 +13,28 @@ export default function Home() {
 			image: 'http://localhost:8080/2016603.jpg',
 			title: 'Mission: Impossible - Dead Reckoning Part One',
 			id: 123,
-			rating: 3.287,
+			rating: { imdb: 3.287 },
 			isWatched: true
 		},
 		{
 			image: 'http://localhost:8080/2016603.jpg',
 			title: 'Mission: Impossible ',
 			id: 123,
-			rating: 3.287,
+			rating: { imdb: 3.287 },
 			isWatched: true
 		},
 		{
 			image: 'http://localhost:8080/2016603.jpg',
 			title: 'Mission: Impossible - Dead Reckoning Part One',
 			id: 123,
-			rating: 3.287,
+			rating: { imdb: 3.287 },
 			isWatched: true
 		},
 		{
 			image: 'http://localhost:8080/2016603.jpg',
 			title: 'Mission: Impossible - Dead Reckoning Part One 324324324 4434',
 			id: 123,
-			rating: 3.287,
+			rating: { imdb: 3.287 },
 			isWatched: true
 		}
 	]
@@ -67,23 +67,29 @@ export default function Home() {
 					<List>
 						{lists.map(({ title, Icon, url, data }, i) => (
 							<ListItem key={i} nested>
-								<Link href={url}>
-									<ListSubheader
-										sx={{
-											alignItems: 'end',
-											cursor: 'pointer',
-											'&:hover': { textDecoration: 'underline' }
-										}}
-										component='h3'
-									>
-										<Icon /> {title} <ArrowForwardIos />
-									</ListSubheader>
-								</Link>
+								<ListSubheader>
+									<Link href={url}>
+										<Box
+											sx={{
+												display: 'flex',
+												alignItems: 'flex-end',
+												cursor: 'pointer',
+												'&:hover': { textDecoration: 'underline' }
+											}}
+											component='h3'
+										>
+											<Icon sx={{ mr: 0.5 }} />
+											{/* fighting custom line height */}
+											<Box mb={'-3px'}>{title}</Box>
+											<ArrowForwardIos />
+										</Box>
+									</Link>
+								</ListSubheader>
 								<List orientation='horizontal' sx={{ overflow: 'scroll' }}>
 									{data.map((data, i) => (
 										<ListItem key={i}>
 											<ListItemContent>
-												<EntityCard {...data} />
+												<EntityCard data={data} />
 											</ListItemContent>
 										</ListItem>
 									))}
@@ -93,7 +99,7 @@ export default function Home() {
 					</List>
 				</Grid>
 				{/* somehow add conditional rendering here in the future */}
-				<Grid xs={0} md={4} sx={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+				<Grid xs={12} md={4} sx={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
 					<SuggestionsCard />
 					<CalendarCard />
 				</Grid>

@@ -57,7 +57,7 @@ export default function CalendarCard() {
 	}, [mode])
 
 	return (
-		<Card>
+		<Card sx={{ mb: 2 }}>
 			<Box
 				sx={{
 					display: 'flex',

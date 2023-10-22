@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 import { Box, List, ListItem, ListItemContent, Typography } from '@mui/joy'
 
-import { formatDate, formatTime } from '../../lib/utils'
+import { formatDate, formatTime } from '../lib/utils'
 
 // this will be amazing with TS but маємо шо маємо at this time
 // you can probably make this part more universal without describing each element

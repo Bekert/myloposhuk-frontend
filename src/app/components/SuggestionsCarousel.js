@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 import { Box, Typography } from '@mui/joy'
 
-import Rating from './Rating'
-import EntityTags from './EntityTags'
-import EntityInfo from './EntityInfo'
+import Rating from '../../components/Rating'
+import EntityTags from '../../components/EntityTags'
+import EntityInfo from '../../components/EntityInfo'
 import Carousel from './Carousel/Carousel'
 
 export default function SuggestionsCarousel({ suggestions }) {

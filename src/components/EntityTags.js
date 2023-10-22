@@ -2,9 +2,16 @@ import PropTypes from 'prop-types'
 
 import { Box, Chip } from '@mui/joy'
 
-function EntityTags({ tags }) {
+function EntityTags({ tags, nowrap, center }) {
 	return (
-		<Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+		<Box
+			sx={{
+				display: 'flex',
+				flexWrap: nowrap ? 'nowrap' : 'wrap',
+				justifyContent: center ? 'space-evenly' : 'unset',
+				gap: 1
+			}}
+		>
 			{tags.map(({ title, type }, i) => (
 				<Chip key={i} color={type === 'genre' ? 'primary' : 'neutral'} variant='soft'>
 					{title}
