@@ -15,7 +15,7 @@ function EntityTags({ tags }) {
 }
 
 EntityTags.propTypes = {
-	tags: PropTypes.arrayOf(PropTypes.string)
+	tags: PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.string, title: PropTypes.string }))
 }
 
 export default EntityTags
