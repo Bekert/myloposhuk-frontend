@@ -1,2 +1,2 @@
 # Next JS Template
-Test
+Test2
